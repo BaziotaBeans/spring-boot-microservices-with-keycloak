@@ -1,0 +1,13 @@
+# O objetivo dele é apenas guardar os nomes e os endereços de IP/Porta de todos os microserviços que se conectarem a ele.
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false # "Eu SOU a lista, não preciso me anotar nela!"
+    fetchRegistry: false # "Não preciso baixar a lista de ninguém."
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+server:
+  port: 8761
